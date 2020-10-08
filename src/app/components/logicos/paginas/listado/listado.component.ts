@@ -20,7 +20,7 @@ export class ListadoComponent implements OnInit {
   count: number;
   next: string;
   previous: string;
-  spinner: boolean;
+  spinner: boolean = false;
 
   constructor(private datos: DataService, private router: Router) { }
 

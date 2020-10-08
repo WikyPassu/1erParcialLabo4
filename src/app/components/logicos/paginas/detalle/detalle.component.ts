@@ -11,6 +11,7 @@ export class DetalleComponent implements OnInit {
 
   nombrePokemon: string = "";
   pokemon: any = {};
+  fotos = new Array();
   habilidades = new Array();
   spinner: boolean = false;
 
@@ -23,6 +24,10 @@ export class DetalleComponent implements OnInit {
       this.datos.getData("https://pokeapi.co/api/v2/pokemon/" + this.nombrePokemon)
       .subscribe(poke => {
         this.pokemon = poke;
+        this.fotos.push(this.pokemon.sprites.front_default);
+        this.fotos.push(this.pokemon.sprites.back_default);
+        this.fotos.push(this.pokemon.sprites.front_shiny);
+        this.fotos.push(this.pokemon.sprites.front_shiny);
         this.pokemon.abilities.forEach(hab => {
           this.habilidades.push(hab.ability.name);
         });
