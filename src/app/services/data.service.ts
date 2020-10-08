@@ -6,8 +6,6 @@ import { Observable } from "rxjs";
   providedIn: 'root'
 })
 export class DataService {
-  
-  private datos:any = {};
 
   constructor(private httpClient: HttpClient) { }
 
@@ -15,19 +13,7 @@ export class DataService {
     return this.httpClient.get(url);
   }
 
-  // getCountriesByRegion(region: string): Observable<any>{
-  //   return this.httpClient.get<any>(`https://restcountries.eu/rest/v2/region/${region}`);
-  // }
-
-  // getCountryByName(name: string): Observable<any>{
-  //   return this.httpClient.get<any>(`https://restcountries.eu/rest/v2/name/${name}`);
-  // }
-
-  // getDatos(){
-  //   return this.datos;
-  // }
-
-  // setDatos(value: object){
-  //   this.datos = value;
-  // }
+  getAbilitieData(url){
+    return this.httpClient.get(url);
+  }
 }

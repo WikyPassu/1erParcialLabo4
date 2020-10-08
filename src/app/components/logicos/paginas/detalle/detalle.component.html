@@ -1,2 +1,15 @@
 <app-title titulo="Detalles sobre el Pokemon"></app-title>
-<app-label label="{{pokemon.name}}"></app-label>
+<app-label label="Nombre: {{pokemon.name}}"></app-label>
+<br><br>
+<app-label label="Imágenes:"></app-label><br>
+<img src="{{pokemon.sprites.front_default}}">
+<img src="{{pokemon.sprites.back_default}}">
+<img src="{{pokemon.sprites.front_shiny}}">
+<img src="{{pokemon.sprites.back_shiny}}">
+<br><br>
+<app-label label="Habilidades:"></app-label><br>
+<div *ngFor="let hab of habilidades">
+    <br>
+    <app-label label="{{hab}}"></app-label>
+</div>
+<app-spinner *ngIf="spinner"></app-spinner>

@@ -11,16 +11,24 @@ export class DetalleComponent implements OnInit {
 
   nombrePokemon: string = "";
   pokemon: any = {};
+  habilidades = new Array();
+  spinner: boolean = false;
 
   constructor(private route: ActivatedRoute, private datos: DataService) { }
 
   ngOnInit(): void {
-    this.nombrePokemon = this.route.snapshot.paramMap.get("pokemon");
-    this.datos.getData("https://pokeapi.co/api/v2/pokemon/" + this.nombrePokemon)
-    .subscribe(poke => {
-      this.pokemon = poke;
-      console.log(this.pokemon);
-    });
+    this.spinner = true;
+    setTimeout(() => {
+      this.nombrePokemon = this.route.snapshot.paramMap.get("pokemon");
+      this.datos.getData("https://pokeapi.co/api/v2/pokemon/" + this.nombrePokemon)
+      .subscribe(poke => {
+        this.pokemon = poke;
+        this.pokemon.abilities.forEach(hab => {
+          this.habilidades.push(hab.ability.name);
+        });
+        this.spinner = false;
+      });  
+    }, 2000);
   }
 
 }

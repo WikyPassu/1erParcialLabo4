@@ -3,3 +3,4 @@
     <app-label label="{{poke.name}}"></app-label>
     <button mat-raised-button color="primary" (click)=irDetalle(poke.name)>Ver detalle</button>
 </div>
+<app-spinner *ngIf="spinner"></app-spinner>

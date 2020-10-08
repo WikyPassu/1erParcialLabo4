@@ -20,18 +20,22 @@ export class ListadoComponent implements OnInit {
   count: number;
   next: string;
   previous: string;
-  
+  spinner: boolean;
+
   constructor(private datos: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.datos.getData()
-    .subscribe((data: Data) => {
-      console.log(data);
-      this.results = data.results;
-      this.count = data.count;
-      this.next = data.next;
-      this.previous = data.previous;
-    })
+    this.spinner = true;
+    setTimeout(() => {
+      this.datos.getData()
+      .subscribe((data: Data) => {
+        this.results = data.results;
+        this.count = data.count;
+        this.next = data.next;
+        this.previous = data.previous;
+        this.spinner = false;
+      });  
+    }, 2000);
   }
 
   irDetalle(pokemon){
