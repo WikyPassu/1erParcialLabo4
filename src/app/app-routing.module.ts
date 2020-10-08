@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InicioComponent } from "./components/presentacion/paginas/inicio/inicio.component";
+import { ListadoComponent } from "./components/logicos/paginas/listado/listado.component";
+import { DetalleComponent } from "./components/logicos/paginas/detalle/detalle.component";
 import { NotFoundComponent } from "./components/presentacion/paginas/not-found/not-found.component";
 
 const routes: Routes = [
@@ -8,33 +10,17 @@ const routes: Routes = [
     path: '',
     component: InicioComponent
   },
-  // {
-  //   path: 'america',
-  //   component: AmericaComponent
-  // },
-  // {
-  //   path: 'europa',
-  //   component: EuropaComponent,
-  // },
-  // {
-  //   path: 'africa',
-  //   component: AfricaComponent,
-  // },
-  // {
-  //   path: 'detalle/:pais',
-  //   component: DetalleComponent,
-  // },
-  // {
-  //   path: 'modificar',
-  //   component: ModificarComponent,
-  // },
-  // {
-  //   path: 'modificados',
-  //   component: ModificadosComponent,
-  // },
+  {
+    path: 'listado',
+    component: ListadoComponent
+  },
+  {
+    path: 'detalle/:pokemon',
+    component: DetalleComponent,
+  },
   {
     path: '**',
-    component: NotFoundComponent,
+    component: NotFoundComponent
   }
 ];
 

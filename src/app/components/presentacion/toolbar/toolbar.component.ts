@@ -18,20 +18,8 @@ export class ToolbarComponent implements OnInit {
       ruta: ""
     },
     {
-      texto: "Ruta1",
-      ruta: "ruta1"
-    },
-    {
-      texto: "Ruta2",
-      ruta: "ruta2"
-    },
-    {
-      texto: "Ruta3",
-      ruta: "ruta3"
-    },
-    {
-      texto: "Ruta4",
-      ruta: "ruta4"
+      texto: "Listado de Pokemones",
+      ruta: "listado"
     }
   ];
 

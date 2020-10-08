@@ -27,6 +27,8 @@ import { ToolbarComponent } from './components/presentacion/toolbar/toolbar.comp
 import { InicioComponent } from './components/presentacion/paginas/inicio/inicio.component';
 import { NotFoundComponent } from './components/presentacion/paginas/not-found/not-found.component';
 import { SpinnerComponent } from './components/presentacion/spinner/spinner.component';
+import { ListadoComponent } from './components/logicos/paginas/listado/listado.component';
+import { DetalleComponent } from './components/logicos/paginas/detalle/detalle.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { SpinnerComponent } from './components/presentacion/spinner/spinner.comp
     ToolbarComponent,
     InicioComponent,
     NotFoundComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ListadoComponent,
+    DetalleComponent
   ],
   imports: [
     FormsModule,
