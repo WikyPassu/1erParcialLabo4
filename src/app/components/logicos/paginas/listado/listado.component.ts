@@ -42,4 +42,30 @@ export class ListadoComponent implements OnInit {
     this.router.navigate(["/detalle/" + pokemon])
     .catch(e => console.log(e));
   }
+
+  onPageChange(event){
+    this.spinner = true;
+    setTimeout(() => {
+      if(event.previousPageIndex < event.pageIndex){
+        this.datos.getData(this.next)
+        .subscribe((data: Data) => {
+          this.results = data.results;
+          this.count = data.count;
+          this.next = data.next;
+          this.previous = data.previous;
+          this.spinner = false;
+        });
+      }
+      else{
+        this.datos.getData(this.previous)
+        .subscribe((data: Data) => {
+          this.results = data.results;
+          this.count = data.count;
+          this.next = data.next;
+          this.previous = data.previous;
+          this.spinner = false;
+        });
+      }
+    }, 2000);
+  }
 }

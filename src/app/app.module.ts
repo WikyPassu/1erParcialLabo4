@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 //HTTP
 import { HttpClientModule } from "@angular/common/http";
@@ -57,7 +58,8 @@ import { DetalleComponent } from './components/logicos/paginas/detalle/detalle.c
     MatButtonModule,
     MatMenuModule,
     MatDividerModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
